@@ -2,27 +2,63 @@
   <div class="w-full px-10 mx-auto">
     <div class="h-screen flex justify-center items-center">
       <!-- Form Container -->
-      <div class="form-container bg-red-500">
+      <div class="form-container">
+        <!-- Form Tabs -->
         <div class="flex text-center">
-          <!-- Form Tabs -->
-          <div class="flex-1 py-4 bg-gray-300 cursor-pointer" @click="toggleTab('signin')">
+          <div
+            class="flex-1 py-4 cursor-pointer"
+            :class="signInTab ? 'active-tab' : 'bg-white'"
+            @click="toggleTab('signin')">
             <a>Sign In</a>
           </div>
-          <div class="flex-1 py-4 bg-gray-300 cursor-pointer" @click="toggleTab('signup')">
+          <div
+            class="flex-1 py-4 cursor-pointer"
+            :class="signInTab ? 'bg-white' : 'active-tab'"
+            @click="toggleTab('signup')">
             <a>Sign Up</a>
           </div>
         </div>
-        <div class="text-center py-10" v-if="signInTab">
-          <!-- Sign In Form -->
-          <h1 class="text-3xl font-bold underline">
-            Sign In
-          </h1>
-        </div>
-        <div class="text-center py-10" v-else>
-          <!-- Sign Up Form -->
-          <h1 class="text-3xl font-bold underline">
-            Sign Up
-          </h1>
+        <!-- Form Content -->
+        <div class="text-center py-10">
+          <div v-if="signInTab">
+            <!-- Sign In Form -->
+            <form action="">
+              <input type="text" name="username" id="username">
+              <br>
+              <input type="password" name="password" id="password">
+              <br>
+              <input type="checkbox" id="remember" name="remember">
+              <label for="remember"> Remember Me</label>
+              <span>Forgot Password</span>
+              <br>
+              <button>LOG IN</button>
+              <br>
+              <span>or</span>
+              <br>
+              <button>Log In with Facebook</button>
+            </form>
+          </div>
+          <div v-else>
+            <!-- Sign Up Form -->
+            <form action="">
+              <input type="text" name="name" id="name">
+              <br>
+              <input type="text" name="username" id="username">
+              <br>
+              <input type="password" name="password" id="password">
+              <br>
+              <input type="radio" id="male" name="gender" value="M">
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="F" checked>
+              <label for="female">Female</label>
+              <br>
+              <button>SIGN UP</button>
+              <br>
+              <span>or</span>
+              <br>
+              <button>Sign Up with Facebook</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -53,5 +89,10 @@ export default {
 
   .form-container {
     min-width: 480px;
+    background-color: #23383E;
+  }
+
+  .active-tab {
+    background-color: #23383E;
   }
 </style>
