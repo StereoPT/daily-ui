@@ -7,27 +7,21 @@
         <div class="flex text-center">
           <div
             class="flex-1 py-4 cursor-pointer"
-            :class="signInTab ? 'active-tab' : 'bg-white'"
+            :class="signInTab ? 'active-tab' : 'inactive-tab'"
             @click="toggleTab('signin')">
             <a>Sign In</a>
           </div>
           <div
             class="flex-1 py-4 cursor-pointer"
-            :class="signInTab ? 'bg-white' : 'active-tab'"
+            :class="signInTab ? 'inactive-tab' : 'active-tab'"
             @click="toggleTab('signup')">
             <a>Sign Up</a>
           </div>
         </div>
         <!-- Form Content -->
-        <div class="text-center py-10">
-          <div v-if="signInTab">
-            <!-- Sign In Form -->
-            <SignIn />
-          </div>
-          <div v-else>
-            <!-- Sign Up Form -->
-            <SignUp />
-          </div>
+        <div class="text-center text-white p-14">
+          <SignIn v-if="signInTab" />
+          <SignUp v-else />
         </div>
       </div>
     </div>
@@ -63,11 +57,18 @@ export default {
   }
 
   .form-container {
-    min-width: 480px;
+    min-width: 380px;
+    min-height: 640px;
     background-color: #23383E;
   }
 
   .active-tab {
     background-color: #23383E;
+    color: white;
+  }
+
+  .inactive-tab {
+    background-color: white;
+    color: #4ad9d9;
   }
 </style>
