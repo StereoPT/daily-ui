@@ -1,21 +1,21 @@
 <template>
   <form class="grid gap-y-8" action="">
-    <input class="bg-transparent py-1 px-2" type="text" name="name" id="name" placeholder="Name">
-    <input class="bg-transparent py-1 px-2" type="email" name="email" id="email" placeholder="Email">
-    <input class="bg-transparent py-1 px-2" type="password" name="password" id="password" placeholder="Password">
+    <input class="custom-input name-input" type="text" name="name" id="name" placeholder="Name">
+    <input class="custom-input email-input" type="email" name="email" id="email" placeholder="Email">
+    <input class="custom-input password-input" type="password" name="password" id="password" placeholder="Password">
     <div class="flex justify-evenly px-4">
-      <div>
+      <div class="custom-checkbox">
         <input type="radio" class="mr-2" id="male" name="gender" value="M">
         <label for="male">Male</label>
       </div>
-      <div>
+      <div class="custom-checkbox">
         <input type="radio" class="mr-2" id="female" name="gender" value="F" checked>
         <label for="female">Female</label>
       </div>
     </div>
-    <button class="btn-signup py-4">SIGN UP</button>
-    <span>or</span>
-    <button class="btn-signup-facebook py-4">Sign Up with Facebook</button>
+    <button class="btn-main py-4">SIGN UP</button>
+    <span class="divider">or</span>
+    <button class="btn-alternate py-4">Sign Up with Facebook</button>
   </form>
 </template>
 
@@ -26,11 +26,23 @@ export default {
 </script>
 
 <style scoped>
-  .btn-signup {
-    background-color: #fca842;
+  .name-input {
+    background-image: url('../assets/user.svg');
   }
 
-  .btn-signup-facebook {
-    background-color: #2e78be;
+  .email-input {
+    background-image: url('../assets/email.svg');
+  }
+
+  .password-input {
+    background-image: url('../assets/pass.svg');
+  }
+
+  .custom-checkbox {
+    font-size: 14px;
+  }
+
+  .custom-checkbox input[type=radio] { 
+    display: none;
   }
 </style>
