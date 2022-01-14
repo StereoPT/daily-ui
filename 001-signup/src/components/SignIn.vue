@@ -1,7 +1,7 @@
 <template>
   <form class="grid gap-y-8" action="">
-    <input class="custom-input" type="text" name="username" id="username" placeholder="Username">
-    <input class="custom-input" type="password" name="password" id="password" placeholder="Password">
+    <input class="custom-input user-input" type="text" name="username" id="username" placeholder="Username">
+    <input class="custom-input password-input" type="password" name="password" id="password" placeholder="Password">
     <div class="flex justify-between px-2">
       <div>
         <input type="checkbox" id="remember" name="remember">
@@ -27,6 +27,18 @@ export default {
     border-bottom: 1px solid #57ffff;
     padding: 0.5rem;
     background-color: transparent;
+    background-size: 16px;
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    padding-right: 2rem;
+  }
+
+  .user-input {
+    background-image: url('../assets/user.svg');
+  }
+
+  .password-input {
+    background-image: url('../assets/pass.svg');
   }
 
   .custom-input:focus {
