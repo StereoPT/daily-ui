@@ -6,13 +6,13 @@
         <!-- Form Tabs -->
         <div class="flex text-center">
           <div
-            class="flex-1 py-4 cursor-pointer"
+            class="flex-1 py-4 cursor-pointer tab"
             :class="signInTab ? 'active-tab' : 'inactive-tab'"
             @click="toggleTab('signin')">
             <a>Sign In</a>
           </div>
           <div
-            class="flex-1 py-4 cursor-pointer"
+            class="flex-1 py-4 cursor-pointer tab"
             :class="signInTab ? 'inactive-tab' : 'active-tab'"
             @click="toggleTab('signup')">
             <a>Sign Up</a>
@@ -60,6 +60,10 @@ export default {
     min-width: 380px;
     min-height: 640px;
     background-color: #23383E;
+  }
+
+  .tab a {
+    font-weight: 600;
   }
 
   .active-tab {

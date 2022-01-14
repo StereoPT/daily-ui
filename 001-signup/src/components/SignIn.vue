@@ -1,7 +1,7 @@
 <template>
   <form class="grid gap-y-8" action="">
-    <input class="bg-transparent py-1 px-2" type="text" name="username" id="username" placeholder="Username">
-    <input class="bg-transparent py-1 px-2" type="password" name="password" id="password" placeholder="Password">
+    <input class="custom-input" type="text" name="username" id="username" placeholder="Username">
+    <input class="custom-input" type="password" name="password" id="password" placeholder="Password">
     <div class="flex justify-between px-2">
       <div>
         <input type="checkbox" id="remember" name="remember">
@@ -22,6 +22,17 @@ export default {
 </script>
 
 <style scoped>
+  .custom-input {
+    font-size: 14px;
+    border-bottom: 1px solid #57ffff;
+    padding: 0.5rem;
+    background-color: transparent;
+  }
+
+  .custom-input:focus {
+    outline: none;
+  }
+
   .btn-login {
     background-color: #fca842;
   }
