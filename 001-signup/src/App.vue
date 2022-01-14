@@ -53,13 +53,16 @@ export default {
 
 <style>
   body {
-    background-color: #dedede;
+    background: url('./assets/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .form-container {
     min-width: 380px;
     min-height: 640px;
-    background-color: #23383E;
+    background-color: rgba(35, 56, 62, 0.85);
   }
 
   .tab a {
@@ -67,7 +70,6 @@ export default {
   }
 
   .active-tab {
-    background-color: #23383E;
     color: white;
   }
 

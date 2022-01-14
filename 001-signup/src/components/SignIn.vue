@@ -1,5 +1,5 @@
 <template>
-  <form class="grid gap-y-8" action="">
+  <form class="grid gap-y-8">
     <input class="custom-input user-input" type="text" name="username" id="username" placeholder="Username">
     <input class="custom-input password-input" type="password" name="password" id="password" placeholder="Password">
     <div class="flex justify-between px-2">
@@ -65,7 +65,6 @@ export default {
     cursor: pointer;
     vertical-align: middle;
     color: black;
-    background-color: #23383E;
 
     line-height: 1.1em;
     font-weight: bold;
